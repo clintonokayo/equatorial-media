@@ -3,387 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equatorial Video Editors</title>
+  <title>Equatorial Media — Video Editing Masters, Nairobi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* ADDED HEADER STYLES - does not affect existing styles */
-   .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(12px);
-  background: rgba(10, 10, 10, 0.85);
-  border-bottom: 1px solid rgba(255, 204, 0, 0.3);
-}
-
-/* Container */
-.header-container {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0.8rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo */
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
-.header-logo img {
-  width: 42px;
-}
-
-.header-logo span {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-}
-
-/* Navigation */
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-}
-
-
-
-
-.header-nav a {
-  position: relative;
-  color: #eaeaea;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: 0.3s;
-}
-
-/* Underline animation */
-.header-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -5px;
-  background: #ffcc00;
-  transition: 0.3s;
-}
-
-.header-nav a:hover {
-  color: #ffffff;
-}
-
-.header-nav a:hover::after {
-  width: 100%;
-}
-
-/* CTA Button */
-.header-btn {
-  background: linear-gradient(135deg, #ffcc00, #ffaa00);
-  color: #1a1a1a !important;
-  padding: 0.55rem 1.3rem;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.header-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
-  background: #ffffff;
-  color: #000 !important;
-}
-
-
-/* HAMBURGER */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  margin: 4px 0;
-  transition: 0.3s;
-}
-
-
-
-/* Mobile */
-/* ================= MOBILE (320px+) ================= */
-@media (max-width: 768px) {
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .header-nav {
-
-    opacity: 0;
-    pointer-events: none;
-
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    /*background: #0a0a0a; */
-    background: rgba(10, 10, 10, 0.85);
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-
-    /* hidden by default */
-    transform: translateY(-200%);
-    transition: 0.4s ease;
-  }
-
-  .header-nav.active {
-    transform: translateY(0);
-    opacity: 1;
-  pointer-events: auto;}
-
-}
-    /* ADDED FOOTER STYLES - does not affect existing styles */
-    .main-footer {
-    /*   background: #0a0a0a;*/
-      color: #dddddd;
-      padding: 3rem 2rem 1.5rem;
-     border-top: 1px solid rgba(255, 204, 0, 0.3);
-      background: rgba(10, 10, 10, 0.85);
-    }
-    .footer-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    .footer-col h4 {
-      color: #ffcc00;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-    .footer-col p, .footer-col a {
-      color: #ccc;
-      text-decoration: none;
-      line-height: 1.6;
-      font-size: 0.9rem;
-    }
-    .footer-col a:hover {
-      color: #ffcc00;
-    }
-    .footer-bottom {
-      text-align: center;
-      padding-top: 1.5rem;
-      border-top: 1px solid #2a2a2a;
-      font-size: 0.85rem;
-    }
-    @media (max-width: 768px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-    }
-
-    /* ADDED CONTACT SECTION STYLES */
-    .contact-section {
-      background: #c40000;
-      color: white;
-      padding: 80px 20px;
-    }
-    .contact-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .contact-container h2 {
-      font-size: 40px;
-      margin-bottom: 20px;
-      color: #ffcc00;
-      text-transform: uppercase;
-    }
-    .contact-container > p {
-      font-size: 18px;
-      margin-bottom: 50px;
-      opacity: 0.9;
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-bottom: 50px;
-    }
-    .contact-card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 15px;
-      backdrop-filter: blur(5px);
-      transition: transform 0.3s;
-    }
-    .contact-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.2);
-    }
-    .contact-card h3 {
-      color: #ffcc00;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-    .contact-card p {
-      margin: 10px 0;
-      font-size: 18px;
-    }
-    .contact-card .phone-large {
-      font-size: 28px;
-      font-weight: bold;
-      color: #ffcc00;
-    }
-    .contact-form {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .contact-form h3 {
-      color: #c40000;
-      margin-bottom: 20px;
-      font-size: 28px;
-    }
-    .form-group {
-      margin-bottom: 20px;
-      text-align: left;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 16px;
-      font-family: inherit;
-    }
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    .submit-btn {
-      background: #c40000;
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      font-size: 18px;
-      border-radius: 40px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .submit-btn:hover {
-      background: #ffcc00;
-      color: #c40000;
-    }
-    @media (max-width: 768px) {
-      .contact-container h2 {
-        font-size: 28px;
-      }
-      .contact-card .phone-large {
-        font-size: 22px;
-      }
-    }
-
-    /* Smooth scroll behavior */
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
 <body>
 
-<!-- ADDED HEADER SECTION WITH WORKING LINKS -->
-<header class="site-header">
+<!-- HEADER -->
+<header class="site-header" id="top">
   <div class="header-container">
-    
-    <div class="header-logo" onclick="window.location.href='#home'">
-      <img src="images/logo.png" alt="Equatorial Media">
-      <span>Equatorial Media</span>
+    <div class="header-logo" onclick="window.location.href='#top'">
+      <img src="images/logo2.png" alt="Telequatorial Media Logo">
+      <span>Telequatorial Media</span>
     </div>
 
-    <!-- Hamburger -->
-    <div class="menu-toggle" id="menu-toggle">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
 
-    <!-- Nav -->
-    <nav class="header-nav" id="nav-menu">
-      <a href="#home">Home</a>
+    <nav class="header-nav" id="nav-menu" aria-label="Main navigation">
       <a href="#services">Services</a>
+      <a href="#process">Process</a>
       <a href="#pricing">Rates</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact-section" class="header-btn">Contact</a>
+      <a href="#portfolio">Specialties</a>
+      <a href="#contact" class="header-btn">Get a Quote</a>
     </nav>
-
   </div>
 </header>
 
-<!-- ADDED ID TO HERO SECTION AS HOME -->
-<section id="home" class="hero">
-  
-  <!-- LEFT CONTENT -->
-  <div class="hero-left">
-    <img src="images/logo.png" class="logo">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Nairobi's Premier Studio</div>
+    <h1 class="hero-title">
+      <span class="title-line">VIDEO</span>
+      <span class="title-line accent-line">EDITING</span>
+      <span class="title-line">MASTERS</span>
+    </h1>
+    <p class="hero-tagline">Bringing the realms of fantasy right to your fingertips</p>
 
-    <h1>VIDEO EDITING<br>MASTERS</h1>
-
-    <p class="tagline">
-      Bringing The Realms Of Fantasy Right To Your Finger-Tips
-    </p>
-
-    <div id="services" class="services">
-      <h3>OUR SERVICES</h3>
-      <ul>
-        <li>▶ Video Editing</li>
-        <li>▶ Photography</li>
-        <li>▶ Graphic Design</li>
-      </ul>
+    <div class="hero-services" id="services">
+      <a href="#portfolio" class="service-pill">🎬 Video Editing</a>
+      <a href="#portfolio" class="service-pill">📷 Photography</a>
+      <a href="#portfolio" class="service-pill">🎨 Graphic Design</a>
     </div>
 
-    <div class="contact">
-      <h2>Telephone:</h2>
-      <p class="phone">0723643727</p>
-      <p>equatorialmedia013@gmail.com</p>
-      <p>Kiguathi Road</p>
-      <p>Embakasi</p>
-      <p>Nairobi Kenya</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start a Project</a>
+      <a href="#pricing" class="btn-outline">View Rates</a>
+    </div>
+
+    <div class="hero-contact">
+      <a href="tel:0723643727" class="hero-phone">0723 643 727</a>
+      <span class="hero-location">📍 Embakasi, Nairobi</span>
     </div>
   </div>
 
-  <!-- RIGHT IMAGES -->
-  <div class="hero-right">
-    <img src="images/blog_drone-vs-uav2-removebg-preview.png" class="camera">
-    <img src="images/professional-editing-suite-stockcake-Photoroom.png" class="studio">
+  <div class="hero-visual">
+    <img src="images/blog_drone-vs-uav2-removebg-preview.png" class="hero-img-drone" alt="Drone camera equipment">
+    <img src="images/professional-editing-suite-stockcake-Photoroom.png" class="hero-img-studio" alt="Professional editing suite">
+    <div class="hero-glow"></div>
   </div>
 </section>
 
+<!-- SPECIALTIES / PORTFOLIO -->
 <section id="portfolio" class="specialties">
-  <div class="specialties-container">
-    <h2 class="section-title">Equatorial Media Specialists</h2>
-    
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-eyebrow">What We Do</span>
+      <h2 class="section-title">Telequatorial Media Specialists</h2>
+    </div>
+
     <div class="specialties-grid">
-      <div class="specialty-item">
+      <div class="specialty-card">
+        <div class="specialty-icon">🎥</div>
         <h3>Film & Video</h3>
         <ul>
           <li>Film Production</li>
@@ -393,7 +90,8 @@
         </ul>
       </div>
 
-      <div class="specialty-item">
+      <div class="specialty-card">
+        <div class="specialty-icon">📸</div>
         <h3>Photography & Prints</h3>
         <ul>
           <li>Photo Shooting</li>
@@ -403,7 +101,8 @@
         </ul>
       </div>
 
-      <div class="specialty-item">
+      <div class="specialty-card">
+        <div class="specialty-icon">✏️</div>
         <h3>Design & Digital</h3>
         <ul>
           <li>Banner Design</li>
@@ -413,54 +112,47 @@
         </ul>
       </div>
     </div>
-
-    <footer class="site-footer">
-      <div class="footer-content">
-        <p><strong>Location:</strong> Kiguathi Road, Embakasi, Nairobi Kenya</p>
-        <p><strong>Email:</strong> equatorialmedia013@gmail.com</p>
-        <p class="footer-tel">TEL: 0723643727</p>
-      </div>
-    </footer>
   </div>
 </section>
 
-<section class="production-process">
-  <div class="process-container">
-    <h2 class="process-title">Our Video Production Strategy</h2>
-    <p class="process-subtitle">To produce effective and high-end videos for you, we utilize a data-driven approach:</p>
-    
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">01</div>
+<!-- PRODUCTION PROCESS -->
+<section id="process" class="process-section">
+  <div class="section-container">
+    <div class="section-header center-header">
+      <span class="section-eyebrow light">How We Work</span>
+      <h2 class="section-title light-title">Our Video Production Strategy</h2>
+      <p class="section-subtitle">A data-driven approach to producing high-end video for you</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-num">01</div>
         <h3>Strategy</h3>
-        <p>We develop a video strategy with the right tactics and messaging that target your potential audience, considering brand guidelines and content planning.</p>
+        <p>We develop a video strategy with the right tactics and messaging that targets your audience, considering brand guidelines and content planning.</p>
       </div>
-
-      <div class="step-card">
-        <div class="step-num">02</div>
+      <div class="process-card">
+        <div class="process-num">02</div>
         <h3>Set Objectives</h3>
-        <p>We work closely with you to craft achievable and specific objectives, making it easy to measure your video success and giving production a clear direction.</p>
+        <p>We work closely with you to craft achievable, specific objectives — making it easy to measure success and giving production a clear direction.</p>
       </div>
-
-      <div class="step-card">
-        <div class="step-num">03</div>
+      <div class="process-card">
+        <div class="process-num">03</div>
         <h3>Research Market</h3>
-        <p>We carry out proper research to construct a message and creative concept that drives action towards your goals and pleases your potential audience.</p>
+        <p>We carry out thorough research to construct a message and creative concept that drives action towards your goals.</p>
       </div>
-
-      <div class="step-card">
-        <div class="step-num">04</div>
+      <div class="process-card">
+        <div class="process-num">04</div>
         <h3>Production</h3>
         <p>Our team handles everything from live-action filming to creative editing, where your story and ideas are finally brought to life.</p>
       </div>
     </div>
 
-    <div class="extended-services">
+    <div class="service-tags-block">
       <h3>Premium Shooting Services</h3>
       <div class="service-tags">
         <span>Wedding Videography</span>
-        <span>Corporate Video Production</span>
-        <span>Music Video Production</span>
+        <span>Corporate Video</span>
+        <span>Music Video</span>
         <span>Documentaries</span>
         <span>Events Coverage</span>
         <span>Interview Videos</span>
@@ -470,49 +162,51 @@
   </div>
 </section>
 
+<!-- PRICING -->
 <section id="pricing" class="pricing-section">
-  <div class="pricing-container">
-    
-    <div class="pricing-header">
-      <h2>Estimated Editing Rates (2026)</h2>
-      <p>Transparent pricing tailored to the Kenyan market.</p>
+  <div class="section-container">
+    <div class="section-header center-header">
+      <span class="section-eyebrow">Transparent Pricing</span>
+      <h2 class="section-title">Estimated Editing Rates (2026)</h2>
+      <p class="pricing-subtext">Tailored to the Kenyan market. No hidden fees.</p>
     </div>
 
+    <div class="table-scroll-hint">← Scroll to see full table on mobile →</div>
     <div class="pricing-table-wrapper">
       <table class="pricing-table">
         <thead>
           <tr>
             <th>Type of Video</th>
             <th>Cost (KES)</th>
-            <th>Features</th>
+            <th>What's Included</th>
           </tr>
         </thead>
         <tbody>
-           <tr>
-            <td><strong>Simple Social Media</strong></td>
-            <td>1,000 – 4,000</td>
-            <td>IG Reels, TikTok, YouTube Shorts (30-60 sec)</td>
-           </tr>
-           <tr>
-            <td><strong>Standard YouTube</strong></td>
-            <td>3,000 – 10,000</td>
-            <td>Cuts, transitions, B-roll (5-10 mins)</td>
-           </tr>
-           <tr>
-            <td><strong>Event Highlights</strong></td>
-            <td>10,000 – 30,000</td>
-            <td>Weddings, Galas (5-20 min edited video)</td>
-           </tr>
-           <tr>
-            <td><strong>Documentary/Corporate</strong></td>
-            <td>15,000 – 60,000+</td>
-            <td>Interviews, branding, motion effects</td>
-           </tr>
-           <tr>
-            <td><strong>Music Video</strong></td>
-            <td>10,000 – 50,000</td>
-            <td>Syncing, color grading, stylized effects</td>
-           </tr>
+          <tr>
+            <td data-label="Type"><strong>Simple Social Media</strong></td>
+            <td data-label="Cost (KES)">1,000 – 4,000</td>
+            <td data-label="Included">IG Reels, TikTok, YouTube Shorts (30–60 sec)</td>
+          </tr>
+          <tr>
+            <td data-label="Type"><strong>Standard YouTube</strong></td>
+            <td data-label="Cost (KES)">3,000 – 10,000</td>
+            <td data-label="Included">Cuts, transitions, B-roll (5–10 min)</td>
+          </tr>
+          <tr>
+            <td data-label="Type"><strong>Event Highlights</strong></td>
+            <td data-label="Cost (KES)">10,000 – 30,000</td>
+            <td data-label="Included">Weddings, Galas (5–20 min edited video)</td>
+          </tr>
+          <tr>
+            <td data-label="Type"><strong>Documentary / Corporate</strong></td>
+            <td data-label="Cost (KES)">15,000 – 60,000+</td>
+            <td data-label="Included">Interviews, branding, motion effects</td>
+          </tr>
+          <tr>
+            <td data-label="Type"><strong>Music Video</strong></td>
+            <td data-label="Cost (KES)">10,000 – 50,000</td>
+            <td data-label="Included">Syncing, color grading, stylized effects</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -520,164 +214,218 @@
     <div class="cost-factors">
       <h3>What Affects the Final Cost?</h3>
       <div class="factors-grid">
-        <div class="factor">
+        <div class="factor-card">
+          <div class="factor-icon">⚙️</div>
           <strong>Project Complexity</strong>
           <p>VFX, motion tracking, and multiple layers increase technical hours.</p>
         </div>
-        <div class="factor">
+        <div class="factor-card">
+          <div class="factor-icon">⏱️</div>
           <strong>Turnaround Time</strong>
           <p>Urgent edits may attract express charges (10%–50% extra).</p>
         </div>
-        <div class="factor">
+        <div class="factor-card">
+          <div class="factor-icon">🎵</div>
           <strong>Licensing & Assets</strong>
           <p>Premium stock footage or licensed music costs are passed to the client.</p>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<section class="about-editing">
-  <div class="about-container">
-    
-    <div class="about-text">
-      <h2>What Are Video Editing Services?</h2>
-      <p>Video editing services involve transforming raw footage into polished, engaging videos. This includes:</p>
-      <ul class="check-list">
-        <li>Trimming and cutting footage</li>
-        <li>Adding transitions and effects</li>
-        <li>Background music and sound mixing</li>
-        <li>Text overlays and animations</li>
-        <li>Color correction and grading</li>
-        <li>Subtitles and captions</li>
-        <li>Exporting for YouTube, IGTV, TikTok, and more</li>
-      </ul>
-    </div>
+<!-- ABOUT / BENEFITS -->
+<section class="about-section">
+  <div class="section-container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-eyebrow light">Our Craft</span>
+        <h2 class="light-title">What Are Video Editing Services?</h2>
+        <p class="about-intro">We transform raw footage into polished, engaging videos. Every project includes:</p>
+        <ul class="check-list">
+          <li>Trimming and cutting footage</li>
+          <li>Adding transitions and effects</li>
+          <li>Background music and sound mixing</li>
+          <li>Text overlays and animations</li>
+          <li>Color correction and grading</li>
+          <li>Subtitles and captions</li>
+          <li>Export for YouTube, IGTV, TikTok, and more</li>
+        </ul>
+      </div>
 
-    <div class="guarantee-box">
-      <h3>What You'll Get In This Order:</h3>
-      <div class="benefit-item">
-        <strong>🚀 On-Time Delivery</strong>
-        <p>Meeting your deadlines every time.</p>
-      </div>
-      <div class="benefit-item">
-        <strong>🎬 1080p High-Quality</strong>
-        <p>Crystal clear resolution for all screens.</p>
-      </div>
-      <div class="benefit-item">
-        <strong>🔄 Unlimited Revisions</strong>
-        <p>We work until you are 100% satisfied.</p>
-      </div>
-      <div class="benefit-item">
-        <strong>🎵 Copyright Free Music</strong>
-        <p>No more copyright strikes on your social media.</p>
+      <div class="guarantee-box">
+        <h3>What You Get</h3>
+        <div class="benefit-item">
+          <span class="benefit-icon">🚀</span>
+          <div>
+            <strong>On-Time Delivery</strong>
+            <p>Meeting your deadlines, every time.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">🎬</span>
+          <div>
+            <strong>1080p High Quality</strong>
+            <p>Crystal-clear resolution for all screens.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">🔄</span>
+          <div>
+            <strong>Unlimited Revisions</strong>
+            <p>We work until you are 100% satisfied.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">🎵</span>
+          <div>
+            <strong>Copyright-Free Music</strong>
+            <p>No more copyright strikes on your uploads.</p>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ADDED CONTACT SECTION -->
-<section id="contact-section" class="contact-section">
-  <div class="contact-container">
-    <h2>Get In Touch</h2>
-    <p>Ready to bring your vision to life? Contact us today for a free consultation!</p>
-    
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-container">
+    <div class="section-header center-header">
+      <span class="section-eyebrow">Let's Create Together</span>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Ready to bring your vision to life? We offer a free consultation.</p>
+    </div>
+
     <div class="contact-grid">
       <div class="contact-card">
-        <h3>📞 Call Us</h3>
-        <p class="phone-large">0723643727</p>
-        <p>Monday - Saturday: 9am - 6pm</p>
+        <div class="contact-card-icon">📞</div>
+        <h3>Call Us</h3>
+        <a href="tel:0723643727" class="contact-phone">0723 643 727</a>
+        <p>Mon – Sat: 9am – 6pm</p>
       </div>
-      
       <div class="contact-card">
-        <h3>✉️ Email Us</h3>
-        <p>equatorialmedia013@gmail.com</p>
-        <p>We reply within 24 hours</p>
+        <div class="contact-card-icon">✉️</div>
+        <h3>Email Us</h3>
+        <a href="mailto:equatorialmedia013@gmail.com" class="contact-email">equatorialmedia013@gmail.com</a>
+        <p>Reply within 24 hours</p>
       </div>
-      
       <div class="contact-card">
-        <h3>📍 Visit Us</h3>
-        <p>Kiguathi Road, Embakasi</p>
+        <div class="contact-card-icon">📍</div>
+        <h3>Visit Us</h3>
+        <p class="contact-addr">Kiguathi Road, Embakasi</p>
         <p>Nairobi, Kenya</p>
       </div>
     </div>
-    
-    <div class="contact-form">
-      <h3>Send Us a Message</h3>
-      <form action="#" method="post">
-        <div class="form-group">
-          <input type="text" placeholder="Your Name" required>
+
+    <div class="contact-form-wrap">
+      <h3>Send a Message</h3>
+      <form action="#" method="post" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-name">Your Name</label>
+            <input id="f-name" type="text" placeholder="Jane Mwangi" required>
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email Address</label>
+            <input id="f-email" type="email" placeholder="jane@gmail.com" required>
+          </div>
         </div>
         <div class="form-group">
-          <input type="email" placeholder="Your Email" required>
+          <label for="f-phone">Phone Number</label>
+          <input id="f-phone" type="tel" placeholder="07XX XXX XXX">
         </div>
         <div class="form-group">
-          <input type="tel" placeholder="Phone Number">
+          <label for="f-msg">Tell us about your project</label>
+          <textarea id="f-msg" placeholder="I need a 3-minute corporate video for our product launch…"></textarea>
         </div>
-        <div class="form-group">
-          <textarea placeholder="Tell us about your project..."></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
+        <button type="submit" class="btn-primary submit-btn">Send Message →</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ADDED FOOTER SECTION -->
+<!-- FOOTER -->
 <footer class="main-footer">
-  <div class="footer-grid">
-    <div class="footer-col">
-      <h4>Equatorial Media</h4>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo2.png" alt="Equatorial Media" class="footer-logo">
+      <h4>Telequatorial Media</h4>
       <p>Premium video editing, photography & creative design studio based in Nairobi, Kenya. We turn your vision into cinematic reality.</p>
     </div>
+
     <div class="footer-col">
-      <h4>Contact Info</h4>
-      <p><strong>📍 Location:</strong> Kiguathi Road, Embakasi, Nairobi Kenya</p>
-      <p><strong>📞 Tel:</strong> 0723643727</p>
-      <p><strong>✉️ Email:</strong> equatorialmedia013@gmail.com</p>
+      <h4>Contact</h4>
+      <p>📍 Kiguathi Road, Embakasi, Nairobi</p>
+      <p>📞 <a href="tel:0723643727">0723 643 727</a></p>
+      <p>✉️ <a href="mailto:equatorialmedia013@gmail.com">equatorialmedia013@gmail.com</a></p>
     </div>
+
     <div class="footer-col">
       <h4>Quick Links</h4>
-      <p><a href="#home" style="color:#ccc; text-decoration:none;">▶ Home</a></p>
-      <p><a href="#services" style="color:#ccc; text-decoration:none;">▶ Services</a></p>
-      <p><a href="#pricing" style="color:#ccc; text-decoration:none;">▶ Pricing</a></p>
-      <p><a href="#contact-section" style="color:#ccc; text-decoration:none;">▶ Contact</a></p>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
     </div>
+
     <div class="footer-col">
-      <h4>Our Services</h4>
-      <p>▶ Video Editing</p>
-      <p>▶ Photography</p>
-      <p>▶ Graphic Design</p>
-      <p>▶ Media Branding</p>
+      <h4>Services</h4>
+      <p>Video Editing</p>
+      <p>Photography</p>
+      <p>Graphic Design</p>
+      <p>Media Branding</p>
     </div>
   </div>
+
   <div class="footer-bottom">
-    <p>&copy; 2026 Equatorial Video Editors — Masters of Visual Storytelling. All rights reserved.</p>
-    <p style="margin-top: 8px; font-size: 12px;">Hero Background Red | Professional Video Production in Nairobi</p>
+    <p>© 2026 Telequatorial Video Editors — Masters of Visual Storytelling.
+       All rights reserved. created by 
+       <a style="display: inline-block;
+                  padding: 10px 20px;
+                  color: white;
+                  text-decoration: none;
+                  border-radius: 12px;
+                  background: rgba(255,255,255,0.1);
+                  backdrop-filter: blur(10px);
+                  border: 1px solid rgba(255,255,255,0.2);
+                  transition: 0.3s; " href="http://bafocode.com"> bafocode.com</a> </p>
   </div>
 </footer>
 
-
 <script>
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-menu");
-  const links = document.querySelectorAll("#nav-menu a");
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav-menu');
+  const links = document.querySelectorAll('#nav-menu a');
 
-  // Toggle menu
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', isOpen);
   });
 
-  // Close menu when any link is clicked
   links.forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
     });
   });
-</script>
 
+  // Scroll-reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.specialty-card, .process-card, .factor-card, .contact-card, .benefit-item').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
